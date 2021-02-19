@@ -11,7 +11,7 @@ fr:
       admin:
         direct_verifications:
           help:
-          - 'Permet l'ajout massif d'utilisateur dans le but de :'
+          - "Permet l'ajout massif d'utilisateur dans le but de :"
           - Directement enregistrer les participants dans l'orgnisation et de leur envoyer des invitations
           - Vérifier ces participants dans l'une des méthodes de vérification active
           - Révoquer leurs vérifications dans l'une des méthodes de vérification active
