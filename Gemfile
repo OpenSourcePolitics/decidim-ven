@@ -22,7 +22,7 @@ gem "decidim", git: "https://github.com/decidim/decidim.git", branch: DECIDIM_VE
 #gem "decidim-cookies", git: "https://github.com/OpenSourcePolitics/decidim-module_cookies", branch: "feature/orejime"
 #gem "decidim-combined_budgeting", git: "https://github.com/mainio/decidim-module-combined_budgeting"
 # gem "decidim-decidim_awesome", git: "https://github.com/Platoniq/decidim-module-decidim_awesome"
-# gem "decidim-decidim_awesome", "~> 0.5.1"
+gem "decidim-decidim_awesome", "~> 0.6.0"
 # gem "decidim-comparative_stats", git: "https://github.com/Platoniq/decidim-module-comparative_stats"
 # gem "decidim-direct_verifications", git: "https://github.com/Platoniq/decidim-verifications-direct_verifications"
 gem "decidim-homepage_interactive_map", git: "https://github.com/OpenSourcePolitics/decidim-module-homepage_interactive_map.git", branch: "release/0.23-stable"
