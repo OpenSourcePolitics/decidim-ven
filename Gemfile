@@ -11,6 +11,7 @@ gem "decidim", git: "https://github.com/decidim/decidim.git", branch: DECIDIM_VE
 gem "decidim-decidim_awesome", "~> 0.7.0"
 gem "decidim-homepage_interactive_map", git: "https://github.com/OpenSourcePolitics/decidim-module-homepage_interactive_map.git", branch: "master"
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer.git", branch: "0.24-stable"
+gem "omniauth-publik", git: "https://github.com/OpenSourcePolitics/omniauth-publik", branch: "v0.0.9"
 
 gem "bootsnap", "~> 1.4"
 
@@ -26,6 +27,10 @@ gem "ruby-progressbar"
 gem "letter_opener_web", "~> 1.3"
 
 gem "sprockets", "~> 3.7"
+
+gem "activejob-uniqueness", require: "active_job/uniqueness/sidekiq_patch"
+gem "fog-aws"
+gem "sys-filesystem"
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri

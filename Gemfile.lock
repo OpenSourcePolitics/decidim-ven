@@ -9,6 +9,15 @@ GIT
       decidim-dev (= 0.24.3)
 
 GIT
+  remote: https://github.com/OpenSourcePolitics/omniauth-publik
+  revision: 6b728e9c48a036eed913853af79a5263ad62c4c1
+  branch: v0.0.9
+  specs:
+    omniauth-publik (0.0.9)
+      omniauth (~> 1.9)
+      omniauth-oauth2 (>= 1.7.2, < 2.0)
+
+GIT
   remote: https://github.com/decidim/decidim.git
   revision: 1c93317cb30e761e0c81081458d9a66eda622768
   branch: release/0.24-stable
@@ -257,6 +266,9 @@ GEM
     activejob (5.2.6)
       activesupport (= 5.2.6)
       globalid (>= 0.3.6)
+    activejob-uniqueness (0.2.3)
+      activejob (>= 4.2, < 7.1)
+      redlock (>= 1.2, < 2)
     activemodel (5.2.6)
       activesupport (= 5.2.6)
     activerecord (5.2.6)
@@ -455,13 +467,23 @@ GEM
     file_validators (2.3.0)
       activemodel (>= 3.2)
       mime-types (>= 1.0)
+    fog-aws (3.13.0)
+      fog-core (~> 2.1)
+      fog-json (~> 1.1)
+      fog-xml (~> 0.1)
     fog-core (2.2.4)
       builder
       excon (~> 0.71)
       formatador (~> 0.2)
       mime-types
+    fog-json (1.2.0)
+      fog-core
+      multi_json (~> 1.10)
     fog-local (0.8.0)
       fog-core (>= 1.27, < 3.0)
+    fog-xml (0.1.4)
+      fog-core
+      nokogiri (>= 1.5.11, < 2.0.0)
     formatador (0.3.0)
     foundation-rails (6.6.2.0)
       railties (>= 3.1.0)
@@ -709,6 +731,8 @@ GEM
       wisper (>= 1.6.1)
     redcarpet (3.5.1)
     redis (4.3.1)
+    redlock (1.2.2)
+      redis (>= 3.0.0, < 5.0)
     regexp_parser (2.2.1)
     request_store (1.5.0)
       rack (>= 1.4)
@@ -849,6 +873,8 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     ssrf_filter (1.0.7)
+    sys-filesystem (1.4.3)
+      ffi (~> 1.1)
     system_test_html_screenshots (0.1.2)
       actionpack (>= 5.2, < 6.0.a)
     temple (0.8.2)
@@ -907,6 +933,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activejob-uniqueness
   bootsnap (~> 1.4)
   byebug (~> 11.0)
   dalli
@@ -917,10 +944,12 @@ DEPENDENCIES
   decidim-term_customizer!
   dotenv-rails
   faker (~> 2.14)
+  fog-aws
   letter_opener_web (~> 1.3)
   listen (~> 3.1)
   lograge
   newrelic_rpm
+  omniauth-publik!
   passenger
   puma (~> 5.3.1)
   ruby-progressbar
@@ -933,6 +962,7 @@ DEPENDENCIES
   spring (~> 2.0)
   spring-watcher-listen (~> 2.0)
   sprockets (~> 3.7)
+  sys-filesystem
   uglifier (~> 4.1)
   web-console (~> 3.5)
 
