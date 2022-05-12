@@ -76,23 +76,23 @@ module Decidim
             )
           end
 
-          serialized_matrix_answer = matrixmultiple_rows.to_h do |row|
+          serialized_matrix_answer = matrixmultiple_rows.map do |row|
             key = translated(row.body, locale: I18n.locale)
             choices = matrixmultiple_answer_options.map do |option|
               matrixmultiple_answer_choices.find { |choice| choice.matrix_row == row && choice.answer_option == option }
             end
 
             [key, choices.map { |choice| choice&.body }]
-          end
+          end.to_h
 
           serialized_files_answer = files_answer.attachments.map(&:url)
 
           expect(serialized).to include(
-            "#{multichoice_question.position + 1}. #{translated(multichoice_question.body, locale: I18n.locale)}" => multichoice_answer_choices.map(&:body)
+            "#{multichoice_question.position + 1}. #{translated(multichoice_question.body, locale: I18n.locale)}" => [multichoice_answer_choices.first.body, multichoice_answer_choices.last.body]
           )
 
           expect(serialized).to include(
-            "#{singlechoice_question.position + 1}. #{translated(singlechoice_question.body, locale: I18n.locale)}" => ["Free text"]
+            "#{singlechoice_question.position + 1}. #{translated(singlechoice_question.body, locale: I18n.locale)}" => ["#{translated(singlechoice_answer_choice.body)} (Free text)"]
           )
 
           expect(serialized).to include(
